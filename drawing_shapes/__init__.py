@@ -8,10 +8,6 @@
 
 import os.path
 import cv2
-import numpy as np
-
-image_dir = "../data/images"
-filename = os.path.join(image_dir, "1.jpg")
 
 """ Preset Colors """
 WHITE = (255, 255, 255)
@@ -58,8 +54,17 @@ def text(img, text, org, fontFace=FONT_HERSHEY_PLAIN, fontScale=5, color=BLUE, t
 
 
 def start():
+    image_dir = "../data/images"
+    filename = os.path.join(image_dir, "3.jpg")
+
     img = cv2.imread(filename=filename)
-    line(img, (0, 0), (100, 100, (0, 255, 0),))
+
+    line(img, (0, 0), (100, 100), RED, THICKNESS_THICK)
+    rectangle(img, (100, 100), (350, 350), GREEN, THICKNESS_THICK)
+
+    cv2.imshow('img', img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 
 if __name__ == '__main__':
