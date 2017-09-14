@@ -57,7 +57,7 @@ def start():
     image_dir = "../data/images"
     filename = os.path.join(image_dir, "3.jpg")
 
-    img = cv2.imread(filename=filename)
+    img = cv2.imread(filename)
 
     line(img, (0, 0), (100, 100), RED, THICKNESS_THICK)
     rectangle(img, (100, 100), (350, 350), GREEN, THICKNESS_THICK)
