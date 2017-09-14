@@ -14,7 +14,10 @@ def main():
 
     while True:
         _, frame = cap.read()
+        # gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        # frame = cv2.resize(frame, (400, 400))
         cv2.imshow('Frame', frame)
+        # cv2.imshow('Gray', gray)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
