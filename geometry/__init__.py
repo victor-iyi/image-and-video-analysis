@@ -10,7 +10,7 @@ import os.path
 
 
 def start():
-    import drawing_shapes.shapes as shapes
+    import geometry.shapes as shapes
     import load.image as image
 
     image_dir = "../data/images"
