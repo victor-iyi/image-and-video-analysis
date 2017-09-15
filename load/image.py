@@ -16,6 +16,7 @@ def read(filename, **kwargs):
 def show(title, img, size=None):
     img = img if size is None else cv2.resize(img, size)
     cv2.imshow(title, img)
+    print("Press any key to exit")
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
