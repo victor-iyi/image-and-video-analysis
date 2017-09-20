@@ -16,8 +16,9 @@ def binary(img, minval, maxval, grayscale=True):
 
 
 if __name__ == '__main__':
-    img = cv2.imread('../data/images/5.jpg')
-    img = binary(img, 12, 255)
+    img = cv2.imread('../data/images/3.jpg')
+    cv2.imshow('img', img)
+    img = binary(img, 150, 255)
 
     cv2.imshow('Binary threshold', img)
 
