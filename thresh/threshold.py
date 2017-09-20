@@ -8,10 +8,18 @@
 import cv2
 
 
-def binary(img, minval, maxval):
-    cv2.threshold(img, minval, maxval, cv2.THRESH_BINARY)
+def binary(img, minval, maxval, grayscale=True):
+    if grayscale:
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    _, image_thresh = cv2.threshold(img, minval, maxval, cv2.THRESH_BINARY)
+    return image_thresh
 
 
 if __name__ == '__main__':
-    img = cv2.imread('../data/images/3.jpg')
-    binary(img, 12, 255)
+    img = cv2.imread('../data/images/5.jpg')
+    img = binary(img, 12, 255)
+
+    cv2.imshow('Binary threshold', img)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
