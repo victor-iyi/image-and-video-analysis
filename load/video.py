@@ -23,7 +23,6 @@ def webcam(source=0, title="webcam"):
 
     capture.release()
     cv2.destroyAllWindows()
-    return True
 
 
 if __name__ == '__main__':

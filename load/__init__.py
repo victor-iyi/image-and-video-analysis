@@ -5,16 +5,16 @@
   Created on 14 September, 2017 @ 3:21 PM.
   Copyright © 2017. Victor. All rights reserved.
 """
-import load.video as video
-import load.image as image
+from load.image import read, show
+from load.video import webcam
 
+"""
+The :mod:`load` module implements generalized loading of images and video stream. It
+includes read, show, webcam Regression, Logistic Regression
+"""
 
-def main():
-    # filename = "../data/images/5.jpg"
-    # img = image.read(filename)
-    # image.show("img", img)
-    video.webcam()
-
-
-if __name__ == "__main__":
-    main()
+__all__ = [
+    'read',
+    'show',
+    'webcam'
+]
