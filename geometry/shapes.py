@@ -50,4 +50,3 @@ def poly(img, pts, isClosed, color=GREEN, thickness=THICKNESS_THIN, **kwargs):
 
 def text(img, text, org, fontFace=FONT_HERSHEY_PLAIN, fontScale=5, color=BLUE, thickness=THICKNESS_THICK, **kwargs):
     cv2.putText(img, text, org, fontFace, fontScale, color, thickness, **kwargs)
-
