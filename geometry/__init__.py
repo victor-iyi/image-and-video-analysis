@@ -6,23 +6,16 @@
   Copyright © 2017. Victor. All rights reserved.
 """
 
-import os.path
+from geometry.shapes import line, rectangle, poly, text
 
+"""
+The :mod:`geometry` module implements generalized drawing of shapes and 
+text on images and frames of videos. It includes line, rectangle, poly, text
+"""
 
-def start():
-    import geometry.shapes as shapes
-    import load.image as image
-
-    image_dir = "../data/images"
-    filename = os.path.join(image_dir, "6.jpg")
-
-    img = image.read(filename)
-
-    shapes.line(img, (0, 0), (100, 100), shapes.RED, shapes.THICKNESS_THICK)
-    shapes.rectangle(img, (100, 100), (350, 350), shapes.GREEN, shapes.THICKNESS_THICK)
-
-    image.show("Shapes", img)
-
-
-if __name__ == '__main__':
-    start()
+__all__ = [
+    'line',
+    'poly',
+    'rectangle',
+    'text'
+]

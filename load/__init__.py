@@ -10,7 +10,7 @@ from load.video import webcam
 
 """
 The :mod:`load` module implements generalized loading of images and video stream. It
-includes read, show, webcam Regression, Logistic Regression
+includes read, show, webcam
 """
 
 __all__ = [
