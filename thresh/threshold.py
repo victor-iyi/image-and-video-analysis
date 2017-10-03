@@ -109,13 +109,16 @@ def adaptive(img, maxval, method=cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
 
 
 def main():
+    # load image
     img = cv2.imread('../data/images/3.jpg')
+    # Original image
     cv2.imshow('Original', img)
     # Binary threshold
     binary(img, 150, 255, grayscale=False, display=True)
     # Adaptive threshold
     adaptive(img, 255, display=True)
 
+    # Dismiss all displayed windows.
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
