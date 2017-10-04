@@ -29,19 +29,23 @@ def color(img, lower_bound, upper_bound):
     return img_filter
 
 
-def blur(img):
-    pass
+def blur(img, size, depth=-1):
+    kernel = np.ones(shape=[size, size], dtype=np.float32) / (size * size)
+    blurred = cv2.filter2D(img, depth, kernel)
+    return blurred
 
 
 def __webcam():
     cap = cv2.VideoCapture(0)
     while True:
         _, frame = cap.read()
-        # Applying color filtering
-        color_filter = color(frame, [150, 110, 150], [200, 200, 150])
+        # Apply transformations
+        color_filter = color(frame, [100, 50, 50], [200, 200, 200])
+        blurred = blur(color_filter, size=15)
+        # Displaying
         cv2.imshow('Color Filter', color_filter)
-        # Applying blur
-
+        cv2.imshow('Blurred', blurred)
+        # Exiting the window
         if cv2.waitKey(1) & 0xFF == ord(' '):
             break
     cap.release()
