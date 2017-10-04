@@ -41,7 +41,7 @@ def __webcam():
         _, frame = cap.read()
         # Apply transformations
         color_filter = color(frame, [100, 50, 50], [200, 200, 200])
-        blurred = blur(color_filter, size=15)
+        blurred = blur(frame, size=15)
         # Displaying
         cv2.imshow('Color Filter', color_filter)
         cv2.imshow('Blurred', blurred)
