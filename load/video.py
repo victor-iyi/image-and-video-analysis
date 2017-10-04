@@ -10,6 +10,15 @@ import cv2
 
 
 def webcam(source=0, title="webcam"):
+    """
+    Make use of the system's webcam.
+
+    :param source:
+            Video stream source, if it's a number, the n webcam will be used.
+            If it's a stream, it will assume a video source.
+    :param title:
+            Title to be written on the webcam window.
+    """
     capture = cv2.VideoCapture(source)
     status, img = capture.read()
 
