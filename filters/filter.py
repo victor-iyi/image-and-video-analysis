@@ -11,9 +11,12 @@ import numpy as np
 
 def color(img, lower_bound, upper_bound):
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    # upper and lower bound
     lower_bound = np.array(lower_bound)
     upper_bound = np.array(upper_bound)
+    # mask
     mask = cv2.inRange(hsv, lower_bound, upper_bound)
+    # filter the image
     img_filter = cv2.bitwise_and(img, img, mask=mask)
     return img_filter
 
