@@ -26,11 +26,12 @@ def __webcam():
     cap = cv2.VideoCapture(0)
     while True:
         _, frame = cap.read()
-
+        # Applying color filtering
         color_filter = color(frame, [0, 0, 0], [255, 255, 255])
         cv2.imshow('Color Filter', color_filter)
+        # Applying blur
 
-        if cv2.waitKey(2) & 0xFF:
+        if cv2.waitKey(1) & 0xFF == ord(' '):
             break
     cap.release()
     cv2.destroyAllWindows()
