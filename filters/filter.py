@@ -10,6 +10,14 @@ import numpy as np
 
 
 def color(img, lower_bound, upper_bound):
+    """
+    Color filtering
+
+    :param img: image to be filtered.
+    :param lower_bound: inclusive lower boundary array or a scalar.
+    :param upper_bound: inclusive upper boundary array or a scalar.
+    :return: A filtered image.
+    """
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     # upper and lower bound
     lower_bound = np.array(lower_bound)
