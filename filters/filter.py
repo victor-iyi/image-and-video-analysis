@@ -30,6 +30,18 @@ def color(img, lower_bound, upper_bound):
 
 
 def blur(img, size, depth=-1, blur_type=None):
+    """
+    Blurring filters.
+
+    :param img:
+            Image to be blurred.
+    :param size:
+            The blur size. A higher number will have a low clarity.
+            A lower number will be clearer.
+    :param depth:
+    :param blur_type:
+    :return:
+    """
     blur_type = str(blur_type).lower if blur_type else blur_type
     if blur_type == 'gaussian':
         blurred = cv2.GaussianBlur(img, (size, size), depth)
