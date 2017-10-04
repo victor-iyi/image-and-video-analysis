@@ -5,13 +5,14 @@
   Created on 03 October, 2017 @ 9:29 PM.
   Copyright © 2017. Victor. All rights reserved.
 """
-
+from filters.filter import blur, color
 
 """
 The :mod:`thresh` module implements generalized threshold functions. It
-includes binary and adaptive modes of threshold
+includes blur, color filters
 """
 
 __all__ = [
-
+    'blur',
+    'color',
 ]

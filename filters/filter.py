@@ -27,7 +27,7 @@ def __webcam():
     while True:
         _, frame = cap.read()
         # Applying color filtering
-        color_filter = color(frame, [0, 0, 0], [255, 255, 255])
+        color_filter = color(frame, [150, 110, 150], [200, 200, 150])
         cv2.imshow('Color Filter', color_filter)
         # Applying blur
 
