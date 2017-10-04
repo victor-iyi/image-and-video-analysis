@@ -29,9 +29,18 @@ def color(img, lower_bound, upper_bound):
     return img_filter
 
 
-def blur(img, size, depth=-1):
-    kernel = np.ones(shape=[size, size], dtype=np.float32) / (size * size)
-    blurred = cv2.filter2D(img, depth, kernel)
+def blur(img, size, depth=-1, blur_type=None):
+    blur_type = str(blur_type).lower if blur_type else blur_type
+    if blur_type == 'gaussian':
+        blurred = cv2.GaussianBlur(img, (size, size), depth)
+    elif blur_type == 'median':
+        blurred = cv2.medianBlur(img, size)
+    elif blur_type == 'bilateral':
+        blurred = cv2.bilateralFilter(img, depth, size, size)
+    else:
+        kernel = np.ones(shape=[size, size], dtype=np.float32) / (size * size)
+        blurred = cv2.filter2D(img, depth, kernel)
+
     return blurred
 
 
